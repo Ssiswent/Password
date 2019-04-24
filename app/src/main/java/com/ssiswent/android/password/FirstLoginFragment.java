@@ -33,7 +33,7 @@ public class FirstLoginFragment extends Fragment {
             View v = inflater.inflate(R.layout.fragment_first_login, container, false);
 
             mPw = v.findViewById(R.id.textPw);
-            mRePw = v.findViewById(R.id.textPassword);
+            mRePw = v.findViewById(R.id.textRePw);
             mLoginBtn = v.findViewById(R.id.loginBtn);
             mWrongImg = v.findViewById(R.id.wrongImg);
             mWrongPw = v.findViewById(R.id.wrongPw);
@@ -50,6 +50,12 @@ public class FirstLoginFragment extends Fragment {
                     {
 //                    loadSuccess = false;
                         mWrongPw.setText("两次输入密码不一致");
+                        mWrongImg.setVisibility(View.VISIBLE);
+                        mWrongPw.setVisibility(View.VISIBLE);
+                    }
+                    else if(Pw.length()==0)
+                    {
+                        mWrongPw.setText("请输入密码");
                         mWrongImg.setVisibility(View.VISIBLE);
                         mWrongPw.setVisibility(View.VISIBLE);
                     }
